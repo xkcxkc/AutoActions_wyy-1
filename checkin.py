@@ -32,6 +32,7 @@ logindata={
     "password":md5(input()),
     "rememberLogin":"true",
 }
+key = input() #server酱推送
 headers = {
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36',
         "Referer" : "http://music.163.com/",
@@ -106,3 +107,23 @@ if object['code']==200:
 else:
     print("发生错误："+str(object['code'])+object['message'])
     exit(object['code'])
+now_time = datetime.datetime.now()
+bj_time = now_time + datetime.timedelta(hours=8)
+desp = f"""
+------
+### 🚁Now：
+```
+{bj_time.strftime("%Y-%m-%d %H:%M:%S %p")}
+```
+### ✨签到：
+```
+### 🚀刷歌:
+```
+{shuaStr}
+```
+"""
+
+requests.post('https://sc.ftqq.com/'+key+'.send', data={
+    'text':bj_time.strftime("%Y-%m-%d %H:%M:%S %p")+'网易云打卡',
+    'desp':desp
+})
