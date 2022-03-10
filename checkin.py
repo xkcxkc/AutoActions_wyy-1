@@ -26,6 +26,10 @@ header={}
 url="https://music.163.com/weapi/login/cellphone"
 url2="https://music.163.com/weapi/point/dailyTask"
 url3="https://music.163.com/weapi/v1/discovery/recommend/resource"
+url4 = "https://music.163.com/weapi/share/friends/resource"
+url5 = "https://music.163.com/weapi/point/dailyTask"
+url6 = "https://music.163.com/weapi/usertool/task/point/receive"
+url7 = "https://music.163.com/weapi/playlist/detail"
 logindata={
     "phone":input(),
     "countrycode":"86",
